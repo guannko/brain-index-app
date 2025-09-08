@@ -14,7 +14,7 @@ export interface UserPayload {
 }
 
 export async function encrypt(payload: UserPayload) {
-  return await new SignJWT(payload)
+  return await new SignJWT(payload as any)
     .setProtectedHeader({ alg: 'HS256' })
     .setIssuedAt()
     .setExpirationTime('24h')
@@ -67,13 +67,13 @@ export async function updateSession(request: NextRequest) {
   const parsed = await decrypt(session)
   if (!parsed) return
 
-  parsed.exp = new Date(Date.now() + 24 * 60 * 60 * 1000)
+  const expires = new Date(Date.now() + 24 * 60 * 60 * 1000)
   const res = NextResponse.next()
   res.cookies.set({
     name: 'session',
     value: await encrypt(parsed),
     httpOnly: true,
-    expires: parsed.exp,
+    expires: expires,
   })
   return res
 }
