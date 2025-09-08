@@ -1,0 +1,41 @@
+{
+  "name": "brain-index-app",
+  "version": "1.0.0",
+  "description": "Brain Index GEO Platform - Full Stack Application",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.0.18",
+    "@tanstack/react-table": "^8.10.0",
+    "autoprefixer": "^10.4.14",
+    "axios": "^1.6.0",
+    "chart.js": "^4.4.0",
+    "clsx": "^2.0.0",
+    "date-fns": "^2.30.0",
+    "jose": "^5.10.0",
+    "js-cookie": "^3.0.5",
+    "jwt-decode": "^4.0.0",
+    "next": "14.0.0",
+    "postcss": "^8.4.24",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.47.0",
+    "react-hot-toast": "^2.4.1",
+    "tailwindcss": "^3.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "14.0.0",
+    "typescript": "^5.0.0"
+  }
+}
