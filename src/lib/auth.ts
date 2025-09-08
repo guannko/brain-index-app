@@ -26,7 +26,8 @@ export async function decrypt(input: string): Promise<UserPayload | null> {
     const { payload } = await jwtVerify(input, key, {
       algorithms: ['HS256'],
     })
-    return payload as UserPayload
+    // Cast to unknown first, then to UserPayload
+    return payload as unknown as UserPayload
   } catch (error) {
     return null
   }
