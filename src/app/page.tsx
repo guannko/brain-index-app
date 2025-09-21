@@ -27,6 +27,7 @@ export default function Home() {
               </Link>
               <div className="hidden md:flex ml-10 space-x-6">
                 <Link href="/" className="text-gray-700 hover:text-gray-900">Главная</Link>
+                <Link href="/marketplace" className="text-orange-500 hover:text-orange-600 font-semibold">🔥 Bot Marketplace</Link>
                 <Link href="/projects" className="text-gray-700 hover:text-gray-900">Наши проекты</Link>
                 <Link href="/pricing" className="text-gray-700 hover:text-gray-900">Тарифы</Link>
                 <Link href="/dashboard" className="text-gray-700 hover:text-gray-900">Кабинет</Link>
@@ -61,9 +62,9 @@ export default function Home() {
                 <a href="#analyze" className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition inline-block text-center">
                   Analyze Now
                 </a>
-                <a href="#video-demo" className="bg-white text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold border border-gray-300 hover:bg-gray-50 transition inline-block text-center">
-                  Watch Demo
-                </a>
+                <Link href="/marketplace" className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:from-orange-600 hover:to-red-600 transition inline-block text-center">
+                  🤖 Bot Marketplace
+                </Link>
               </div>
             </div>
             
@@ -88,6 +89,63 @@ export default function Home() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Bot Marketplace Preview Section */}
+      <section className="py-20 bg-gradient-to-r from-purple-50 to-pink-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">🎆 NEW: Bot Marketplace 2025</h2>
+            <p className="text-xl text-gray-600">16 Production-Ready AI Bots from 8 Different AI Analysis</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <div className="bg-white rounded-lg p-6 shadow-lg border-2 border-green-500">
+              <div className="flex justify-between items-start mb-4">
+                <span className="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold">Available Now</span>
+                <span className="text-2xl font-bold">$299</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Commercial Bot Template</h3>
+              <p className="text-gray-600 text-sm mb-4">Production-ready bot for any business</p>
+              <div className="flex justify-between">
+                <span className="text-xs bg-gray-200 px-2 py-1 rounded">GPT</span>
+                <span className="text-xs text-gray-500">Week 1 Launch</span>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-lg p-6 shadow-lg border-2 border-yellow-500">
+              <div className="flex justify-between items-start mb-4">
+                <span className="bg-yellow-500 text-white px-3 py-1 rounded-full text-xs font-semibold">Beta Testing</span>
+                <span className="text-2xl font-bold">$500<span className="text-sm">/mo</span></span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Security Module</h3>
+              <p className="text-gray-600 text-sm mb-4">Enterprise security for bots</p>
+              <div className="flex justify-between">
+                <span className="text-xs bg-gray-200 px-2 py-1 rounded">MiniMax</span>
+                <span className="text-xs text-gray-500">Month 2-3</span>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-lg p-6 shadow-lg border-2 border-gray-400">
+              <div className="flex justify-between items-start mb-4">
+                <span className="bg-gray-400 text-white px-3 py-1 rounded-full text-xs font-semibold">Coming Soon</span>
+                <span className="text-2xl font-bold">$5,000</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Trading Bot Grid/DCA</h3>
+              <p className="text-gray-600 text-sm mb-4">Crypto trading with advanced strategies</p>
+              <div className="flex justify-between">
+                <span className="text-xs bg-gray-200 px-2 py-1 rounded">MISTRAL</span>
+                <span className="text-xs text-gray-500">Month 2-3</span>
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-center">
+            <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition inline-block">
+              Explore All 16 Bots →
+            </Link>
           </div>
         </div>
       </section>
@@ -302,6 +360,7 @@ export default function Home() {
             <div>
               <h4 className="text-white font-semibold mb-4">Products</h4>
               <ul className="space-y-2 text-sm">
+                <li><Link href="/marketplace" className="hover:text-white">🤖 Bot Marketplace</Link></li>
                 <li><Link href="#analyze" className="hover:text-white">AI Analysis</Link></li>
                 <li><Link href="/pricing" className="hover:text-white">Pricing</Link></li>
                 <li><Link href="/admin" className="hover:text-white">Admin Panel</Link></li>
