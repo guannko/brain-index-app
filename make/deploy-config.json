@@ -1,0 +1,32 @@
+{
+  "organization": {
+    "id": 5038858,
+    "name": "Brain Index"
+  },
+  "team": {
+    "id": 2552758,
+    "name": "My Team"
+  },
+  "zone": "eu2.make.com",
+  "apiToken": "03106422-df8a-4378-beb0-cac8aaa78be3",
+  "connections": {
+    "stripe": {
+      "name": "Brain Index Stripe",
+      "type": "stripe"
+    },
+    "google-sheets": {
+      "name": "Brain Index Sheets",
+      "type": "google"
+    },
+    "datastore": {
+      "name": "Brain Index Storage",
+      "type": "internal"
+    }
+  },
+  "webhooks": {
+    "main": {
+      "name": "Brain Index Webhook",
+      "url": "https://hook.eu2.make.com/YOUR_WEBHOOK_ID"
+    }
+  }
+}

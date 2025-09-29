@@ -1,0 +1,89 @@
+{
+  "name": "Stripe Payment Analytics",
+  "description": "Track Stripe payments and update analytics dashboard",
+  "teamId": 2552758,
+  "scheduling": {
+    "type": "cron",
+    "cron": "0 9 * * *"
+  },
+  "flow": [
+    {
+      "id": 1,
+      "module": "stripe:ListCharges",
+      "version": 1,
+      "parameters": {
+        "limit": 1000,
+        "created": {
+          "gte": "{{formatDate(addDays(now; -1); 'X')}}"
+        }
+      },
+      "mapper": {},
+      "metadata": {
+        "designer": {
+          "x": 0,
+          "y": 0
+        },
+        "restore": {
+          "parameters": {
+            "limit": 1000
+          }
+        }
+      }
+    },
+    {
+      "id": 2,
+      "module": "builtin:BasicAggregator",
+      "version": 1,
+      "parameters": {},
+      "mapper": {
+        "array": "{{1.data}}"
+      },
+      "metadata": {
+        "designer": {
+          "x": 300,
+          "y": 0
+        }
+      }
+    },
+    {
+      "id": 3,
+      "module": "google-sheets:addRow",
+      "version": 3,
+      "parameters": {
+        "spreadsheetId": "YOUR_SPREADSHEET_ID",
+        "sheetName": "Payments"
+      },
+      "mapper": {
+        "values": [
+          "{{2.array[].id}}",
+          "{{2.array[].amount}}",
+          "{{2.array[].currency}}",
+          "{{2.array[].customer}}",
+          "{{formatDate(2.array[].created; 'YYYY-MM-DD HH:mm')}}"
+        ]
+      },
+      "metadata": {
+        "designer": {
+          "x": 600,
+          "y": 0
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "version": 1,
+    "scenario": {
+      "roundtrips": 1,
+      "maxErrors": 3,
+      "autoCommit": true,
+      "sequential": false,
+      "confidential": false,
+      "dataloss": false,
+      "dlq": false
+    },
+    "designer": {
+      "orphans": []
+    },
+    "zone": "eu2.make.com"
+  }
+}
